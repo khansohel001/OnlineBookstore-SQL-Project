@@ -3,6 +3,8 @@
 
 
 
+
+
 - **Advanced JOINs:** Mastered INNER, LEFT, and RIGHT JOINs to seamlessly link Books, Customers, and Orders.
 - **Aggregations & Reporting:** Leveraged SUM, COUNT, AVG with GROUP BY to track sales, revenue, and average pricing.
 - **Window Functions:** Applied RANK(), DENSE_RANK(), and SUM() OVER() for top customers, bestsellers, and running totals.
