@@ -17,3 +17,17 @@
 - **Data Import & Management:** Efficiently loaded large CSV datasets using BULK INSERT / COPY.
 - **Genre & Author Insights:** Measured genre-wise sales, author revenue, and customer preferences.
 - **Performance Optimization:** Enhanced query efficiency with COALESCE(), TOP, and indexing strategies.
+**Additional Features Implemented**
+
+**Views:**
+
+-vw_BookSales: Calculates total sales and revenue per book.
+-vw_CustomerSpending: Tracks total spending per customer.
+
+**Stored Procedures:**
+
+-sp_GetOrdersByCustomer: Fetches all orders for a specific customer, including book details and order dates.
+
+**CTEs (Common Table Expressions):**
+
+-Example: Identifying top 5 bestselling books with total quantity sold.
