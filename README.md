@@ -19,6 +19,7 @@
 - **Performance Optimization:** Enhanced query efficiency with COALESCE(), TOP, and indexing strategies.
   
 **Additional Features Implemented**
+
 **Views:**
 
 -vw_BookSales: Calculates total sales and revenue per book.
