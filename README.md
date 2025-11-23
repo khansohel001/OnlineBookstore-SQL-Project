@@ -17,8 +17,8 @@
 - **Data Import & Management:** Efficiently loaded large CSV datasets using BULK INSERT / COPY.
 - **Genre & Author Insights:** Measured genre-wise sales, author revenue, and customer preferences.
 - **Performance Optimization:** Enhanced query efficiency with COALESCE(), TOP, and indexing strategies.
+  
 **Additional Features Implemented**
-
 **Views:**
 
 -vw_BookSales: Calculates total sales and revenue per book.
