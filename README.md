@@ -23,6 +23,7 @@
 **Views:**
 
 -vw_BookSales: Calculates total sales and revenue per book.
+
 -vw_CustomerSpending: Tracks total spending per customer.
 
 **Stored Procedures:**
