@@ -1,7 +1,7 @@
 CREATE DATABASE OnlineBookstore;
 
 USE OnlineBookstore;
-
+--Added Flat CSV Files--
 
 select * from books;
 select * from customers;
@@ -370,5 +370,6 @@ SELECT
         AS Fulfillment_Rate_Percentage
 FROM Orders o
 JOIN Books b ON o.Book_ID = b.Book_ID;
+
 
 
