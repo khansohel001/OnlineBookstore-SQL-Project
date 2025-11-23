@@ -372,4 +372,62 @@ FROM Orders o
 JOIN Books b ON o.Book_ID = b.Book_ID;
 
 
+/* Extra Advanced Activities */
+
+--Views-
+
+--a) View for Total Sales per Book
+CREATE VIEW vw_BookSales AS
+SELECT 
+    b.Book_ID,
+    b.Title,
+    SUM(o.Quantity) AS Total_Quantity_Sold,
+    SUM(o.Total_Amount) AS Total_Revenue
+FROM Books b
+LEFT JOIN Orders o ON b.Book_ID = o.Book_ID
+GROUP BY b.Book_ID, b.Title;
+
+--b) View for Customers with Total Spending
+CREATE VIEW vw_CustomerSpending AS
+SELECT 
+    c.Customer_ID,
+    c.Name,
+    SUM(o.Total_Amount) AS Total_Spent
+FROM Customers c
+LEFT JOIN Orders o ON c.Customer_ID = o.Customer_ID
+GROUP BY c.Customer_ID, c.Name;
+
+--Stored Procedures--
+
+--a) Procedure to get orders by customer
+CREATE PROCEDURE sp_GetOrdersByCustomer
+    @CustomerID INT
+AS
+BEGIN
+    SELECT o.Order_ID, b.Title, o.Quantity, o.Total_Amount, o.Order_Date
+    FROM Orders o
+    JOIN Books b ON o.Book_ID = b.Book_ID
+    WHERE o.Customer_ID = @CustomerID
+    ORDER BY o.Order_Date;
+END;
+
+
+EXEC sp_GetOrdersByCustomer @CustomerID = 2;
+
+
+--CTEs (Common Table Expressions)--
+
+--a) Top 5 bestselling books
+WITH BookSalesCTE AS (
+    SELECT 
+        b.Title,
+        SUM(o.Quantity) AS TotalSold
+    FROM Orders o
+    JOIN Books b ON o.Book_ID = b.Book_ID
+    GROUP BY b.Title
+)
+SELECT TOP 5 *
+FROM BookSalesCTE
+ORDER BY TotalSold DESC;
+
 
